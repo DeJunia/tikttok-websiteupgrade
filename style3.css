@@ -1,0 +1,592 @@
+@import url("https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap");
+
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+  list-style-type: none;
+  font-family: "Roboto", sans-serif;
+}
+
+:root {
+  --primary-color: black;
+  --primary1-color: white;
+  --text-color: rgb(246, 246, 246);
+  --text1-color: rgb(156, 156, 156);
+  --dec-Color: rgb(191, 25, 25);
+  --cont-overlay: 90deg, hsla(220, 17%, 7%) 0%, hsla(220, 17%, 7%, 0.5) 100%;
+  --top-overlay: 360deg, hsla(250, 13%, 11%, 0), hsla(250, 13%, 11%, 1);
+  --bottom-overlay: 180deg, hsla(250, 13%, 11%, 0), hsla(250, 13%, 11%, 1);
+  --prot-color: rgba(24, 30, 40, 0.363);
+  --prot-color1: rgba(0, 0, 0, 0.193);
+  --scroll: rgba(201, 201, 201, 0.233);
+  --sub: rgb(170, 169, 169);
+  --sub2: rgba(231, 231, 231, 0.935);
+  --play: rgba(58, 57, 57, 0.419);
+  --tikBack-color: 90deg, rgba(27, 3, 3, 1) 0%, rgba(11, 4, 28, 1) 82%;
+  --pink-color: rgb(255, 0, 72);
+  --yellow-col0r: rgb(255, 230, 0);
+}
+
+li {
+  list-style: none;
+}
+
+a,
+img,
+span,
+iframe,
+button,
+nav,
+aside,
+main,
+.sideLists,
+.flex-div {
+  display: flex;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+svg {
+  width: 24px;
+  height: 24px;
+}
+
+img {
+  height: auto;
+}
+
+button {
+  background: none;
+  border: none;
+  outline: none;
+}
+
+body {
+  width: 100%;
+  background: var(--primary1-color);
+}
+
+header {
+  width: 100%;
+  height: fit-content;
+  /*background-color: var(--prot-color);*/
+  position: fixed;
+  top: 0;
+  z-index: 8;
+  padding-inline: 70px 10px;
+}
+
+/***********************************Flex-div**********************************************/
+.flex-div {
+  width: 100%;
+  height: 100%;
+  border-radius: 8px;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  color: var(--primary1-color);
+  align-items: center;
+  padding-block: 10px;
+}
+
+.liveIcon {
+  position: relative;
+}
+
+.liveIconTxt {
+  position: absolute;
+  color: var(--primary1-color);
+  top: 9px;
+  left: 5px;
+  font-size: 7px;
+}
+
+.searchWrapper {
+  width: 350px;
+  height: 32px;
+  border: none;
+  box-shadow: 0 0 0 2px var(--sub);
+  border-radius: 8px;
+  display: flex;
+  flex-direction: row;
+  gap: 10px;
+  padding-inline: 10px;
+}
+
+.searchWrapper button {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 32px;
+  height: 32px;
+}
+
+.searchWrapper button svg {
+  width: 20px;
+  height: 20px;
+}
+
+.searchWrapper input {
+  width: 100%;
+  height: 100%;
+  border: none;
+  outline: none;
+  background: transparent;
+  color: var(--primary-color);
+}
+
+.searchWrapper input::placeholder {
+  color: var(--primary-color);
+  font-size: 14px;
+}
+
+nav {
+  width: 60px;
+  height: 100vh;
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 9;
+  flex-direction: column;
+  justify-content: flex-start;
+}
+
+.logo {
+  width: 100%;
+  height: 60px;
+  padding: 10px;
+  margin-bottom: 10px;
+}
+
+.logo a {
+  width: 100%;
+  height: 100%;
+  background-color: var(--prot-color);
+  border-radius: 8px;
+}
+
+.logo a svg {
+  height: 100%;
+  width: 100%;
+}
+
+.sideLists {
+  overflow: hidden;
+  height: calc(100vh - 60px);
+  width: 60px;
+  align-items: center;
+  padding-inline: 10px;
+}
+
+.sideLists ul {
+  margin-top: 5px;
+  width: 100%;
+  padding-inline: 8px;
+  height: fit-content;
+  border-radius: 8px;
+  background-color: transparent;
+}
+
+.sideLists ul {
+  display: flex;
+  flex-direction: column;
+  gap: 25px;
+  align-items: center;
+}
+
+.sideLists ul li a {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  align-items: center;
+  color: var(--primary-color);
+  font-size: 11px;
+  cursor: pointer;
+  opacity: 0.6;
+}
+
+.sideLists ul li .active {
+  color: var(--primary-color);
+  opacity: 1;
+}
+
+.sideLists ul li a:hover {
+  opacity: 1;
+}
+
+.addicon {
+  position: relative;
+  background: var(--primary1-color);
+  opacity: 0.9;
+  border-radius: 5px;
+  z-index: 21;
+  height: 24px;
+  width: 35px;
+  background: -webkit-linear-gradient(left, #0ee, #f05);
+  margin-top: 10px;
+  margin-bottom: 10px;
+}
+
+.addicon svg {
+  background: var(--primary-color);
+  border-radius: 5px;
+  width: 28px;
+}
+
+main {
+  width: 100%;
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  overflow: hidden;
+  padding-block: 70px 0px;
+  padding-inline: 70px;
+}
+
+main .content {
+  width: 100%;
+  height: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  padding-block-start: 2%;
+  gap: 5%;
+}
+
+.content .statusSlides {
+  width: 100%;
+  height: 70px;
+  padding-inline: 10%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.statusSlide {
+  width: 100%;
+  height: 100%;
+  overflow-y: hidden;
+  overflow-x: scroll;
+  background-color: var(--scroll);
+  border-radius: 8px;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+}
+
+.statusSlide .slide {
+  display: flex;
+  height: 70px;
+  width: 70px;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: center;
+  gap: 2px;
+  padding: 6px;
+}
+
+.statusSlide .slide .img {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  border: 2px solid #0ee;
+  position: relative;
+}
+
+.statusSlide .slide .img img {
+  border-radius: 50%;
+}
+
+.statusSlide .slide .img span {
+  position: absolute;
+  right: 0;
+  bottom: 0;
+  background-color: rgb(4, 187, 187);
+  border-radius: 50%;
+  border: 2px solid white;
+}
+
+.statusSlide .slide .img.create {
+  border: none;
+}
+
+.statusSlide .slide .txt {
+  font-size: 12px;
+}
+
+.statusSlide::-webkit-scrollbar {
+  display: none;
+}
+
+.content .textBox {
+  max-width: 900px;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  border-radius: 16px;
+  overflow: hidden;
+}
+
+.textBox .userTabs {
+  width: 250px;
+  height: 100%;
+  background-color: var(--primary1-color);
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+}
+
+.textBox .chatSec {
+  width: calc(100% - 250px);
+  height: 100%;
+
+  background-color: var(--scroll);
+}
+
+.userTabs .head {
+  width: 100%;
+  height: 30px;
+  background-color: var(--scroll);
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  align-items: center;
+  padding-inline-start: 10px;
+  font-size: 16px;
+  font-weight: 500;
+  gap: 10px;
+}
+
+.userTabs .head div {
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  align-items: center;
+  gap: 3px;
+  padding-block: 3px;
+  padding-inline: 4px;
+  border-radius: 3px;
+  background-color: var(--sub2);
+}
+
+.userTabs .head div span {
+  width: 7px;
+  height: 7px;
+  background-color: rgb(33, 214, 16);
+  border-radius: 50%;
+}
+
+.userTabs .tabContent {
+  width: 100%;
+  height: calc(100% - 30px);
+  overflow-x: hidden;
+  overflow-y: scroll;
+  padding-inline-start: 10px;
+  padding-block-start: 10px;
+  border-radius: 0 8px 0 0;
+}
+
+.userTabs .tabContent::-webkit-scrollbar {
+  display: none;
+}
+.tabContent .userTab {
+  width: 100%;
+  height: 50px;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  padding-inline-start: 10px;
+  padding-inline-end: 5px;
+  justify-content: space-between;
+}
+
+.userTab.active {
+  background-color: var(--scroll);
+  width: 100%;
+  height: 50px;
+  border-radius: 8px 0 0 8px;
+  position: relative;
+}
+
+.userTab.active::after {
+  position: absolute;
+  content: " ";
+  left: 2px;
+  width: 3px;
+  height: 20px;
+  background-color: rgb(4, 187, 187);
+  border-radius: 5px;
+}
+
+.userTab .profiInfo {
+  height: 100%;
+  width: calc(100% - 40px);
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: flex-start;
+  gap: 10px;
+}
+
+.userTab .profiInfo .info {
+  height: 100%;
+  width: calc(100% - 40px);
+  display: flex;
+  flex-direction: column;
+  align-items: start;
+  justify-content: center;
+}
+
+.userTab .profiInfo .info h3 {
+  font-size: 14px;
+  font-weight: 500;
+}
+
+.userTab .profiInfo .info p {
+  font-size: 13px;
+  color: var(--sub);
+}
+
+.chatPage .head .profiInfo .pic,
+.userTab .profiInfo .pic {
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+  overflow: hidden;
+}
+
+.chatSec .chatPage {
+  display: none;
+  width: 100%;
+  height: 100%;
+  position: relative;
+}
+
+.chatSec .chatPage .head {
+  width: 100%;
+  height: 50px;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  padding-inline: 10px;
+  gap: 10px;
+  position: absolute;
+  top: 0;
+}
+
+.chatPage .head .ics,
+.chatPage .head .profiInfo {
+  height: 100%;
+  width: fit-content;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: flex-start;
+  gap: 5px;
+}
+
+.chatPage .head .profiInfo .info h3 {
+  font-size: 14px;
+  font-weight: 500;
+}
+
+.chatSec .chatPage .textArea {
+  width: 100%;
+  height: fit-content;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  padding-inline: 10px;
+  position: absolute;
+  bottom: 0;
+  padding-block: 10px;
+}
+
+.chatSec .chatPage .textCont {
+  width: 100%;
+  height: 100%;
+  padding-block: 50px;
+}
+
+.textArea .textWrapper {
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  gap: 10px;
+  height: 30px;
+  padding-inline: 10px;
+  border-radius: 50px;
+  background-color: var(--primary1-color);
+}
+
+.ics1 {
+  padding: 3px;
+  background-color: rgb(0, 102, 255);
+  border-radius: 50%;
+}
+.textArea .textWrapper input {
+  width: 100%;
+  flex: 1;
+  outline: none;
+  border: none;
+  background: transparent;
+}
+.textArea .predicts {
+  width: 100%;
+  height: fit-content;
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  padding-block: 5px;
+  align-items: center;
+  gap: 10px;
+}
+
+.textArea .predicts .prid {
+  font-size: 12px;
+  padding: 3px;
+  background-color: var(--prot-color1);
+  border-radius: 16px;
+  color: white;
+  width: fit-content;
+}
+
+.textCont .userInfo {
+  width: 100%;
+  height: fit-content;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  padding-block: 5px;
+  align-items: center;
+  gap: 10px;
+}
+
+.textCont .userInfo .pic {
+  height: 100px;
+  width: 100px;
+  border-radius: 50px;
+  overflow: hidden;
+}
+
+.textCont .userInfo h2 {
+  font-size: 18px;
+  font-weight: 500;
+}
+
+.textCont .userInfo p {
+  font-size: 14px;
+  color: var(--sub);
+}
